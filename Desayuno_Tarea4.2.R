@@ -6,7 +6,7 @@
     # obtendremos los productos para confeccionar el desayuno.
 
 #Las materias primas son:
-  #palta, naranjas, pan, cafe, harina y huevos.
+  #palta, naranjas, pan, cafe, harina, huevos y sarten.
 
 #Las acciones son:
   #Calentar: String->String
@@ -96,32 +96,32 @@ Servir <- function(x,y,z,j){
 }
 
 #Test
-  #Para preparar un desayuno calientito, se realizara¡ el siguiente procedimiento:
+  #Para preparar un desayuno calientito, se realizara el siguiente procedimiento:
 
 #1) 
-   Cortar("naranjas")
-   Cortar("pan")
-   Cortar("palta")
+   NaranjasCortadas<-Cortar("naranjas")
+   PanCortado<-Cortar("pan")
+   PaltaCortada<-Cortar("palta")
    
 #2)
-   Preparar("naranjas cortadas")
-   Moler("palta cortada")
-   Preparar("harina","huevos")
+   JugoDeNaranjas<-Preparar(NaranjasCortadas)
+   PaltaMolida<-Moler(PaltaCortada)
+   MasaDePanqueques<-Preparar("harina","huevos")
 
 #3)
-   CalentarSarten("sarten")
-   Preparar("masa de panqueques","sarten caliente")
-   Rellenar("panqueques")
+   SartenCaliente<-CalentarSarten("sarten")
+   Panqueques<-Preparar(MasaDePanqueques,SartenCaliente)
+   PanquequesConManjar<-Rellenar(Panqueques)
    
 #4)
-   Calentar("pan cortado")
-   Preparar("pan tostado","palta molida")
+   PanTostado<-Calentar(PanCortado)
+   PanTostadoConPalta<-Preparar(PanTostado,PaltaMolida)
 
 #5)
-   Calentar("cafe")
+   CafeCaliente<-Calentar("cafe")
 
 #6)
-   Servir("pan tostado con palta","panqueques con manjar","jugo de naranjas","cafe caliente")
+   Servir(PanTostadoConPalta,PanquequesConManjar,JugoDeNaranjas,CafeCaliente)
    
 #Test2
 #En caso de usar otras materias primas u otros resultados
@@ -130,8 +130,8 @@ Servir <- function(x,y,z,j){
 
 Cortar("manzanas")
 Preparar("pan","huevos")
-Moler("masa de panqueques")
+Moler(MasaDePanqueques)
 Rellenar("pan")
 CalentarSarten("paila")
 Calentar("huevos")
-Servir("jugo de manzanas")
+Servir(JugoDeNaranjas)
